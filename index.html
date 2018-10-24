@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- meta data -->
+	<title>Should I PWA?</title>
+	<meta charset="utf-8">
+	<meta name="description" content="Guideline for the Usage of Progressive Web Apps">
+	<meta name="author" content="Kevin Frank">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" type="image/x-icon" href="/icons/icon.ico">
+	<link rel="manifest" href="/manifest.json">
+
+	<!-- JQuery -->
+	<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+	
+	<!-- Should I PWA -->
+	<link rel="stylesheet" href="css/shouldipwa.css" />
+	<script src="i18n/en.js"></script>
+	<script src="js/rules.js"></script>
+	<script src="js/shouldipwa.js"></script>
+	
+	<!-- JQuery Mobile -->
+	<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+	<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+	<!-- INTRO PAGE -->
+	<div data-role="page" id="intro">
+	
+		<div data-role="header">
+			<h1>Should I PWA?</h1>
+			<div class="language-select-container">
+				<select id="langauge-select">
+					<option value="en">English</option>
+				</select>
+			</div>
+		</div>
+	
+		<div class="ui-content" role="main">
+			<p></p>
+			<a class="ui-btn ui-corner-all" href="#guideline"></a>
+		</div>
+	
+		<div data-role="footer">
+			<div class="ui-title" role="heading">
+				<span id="createdby"></span> |
+				<a href="https://github.com/kfrank-vfh/Should_I_PWA" target="_blank">GitHub</a> |
+				<a id="guidepdf" href="/pdf/PWA Regelwerk.pdf" target="_blank"></a>
+			</div>
+		</div>
+		
+	</div>
+
+	<!-- GUIDELINE PAGE -->
+	<div data-role="page" id="guideline">
+	
+		<div data-role="header">
+			<h1>Should I PWA?</h1>
+		</div>
+		
+		<div class="ui-content" role="main">
+			<form>
+				<h2 id="guide.head.support"></h2>
+				<p id="guide.para.support"></p>
+				
+				<p id="guide.alert.support" hidden="hidden"></p>
+				
+				<div id="browser-container">
+					<div class="prototype" hidden="hidden">
+						<div class="ui-grid-a">
+							<div class="ui-block-a">
+								<fieldset data-role="controlgroup" data-type="horizontal" class="ui-field-contain">
+							        <legend></legend>
+							        <input type="radio" value="true">
+							        <label class="label-supported"></label>
+							        <input type="radio" value="false" checked="checked">
+							        <label class="label-unsupported"></label>
+						    	</fieldset>
+							</div>
+							<div class="ui-block-b">
+								<label class="label-fromversion"></label>
+								<input type="number" data-clear-btn="false">
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<h2 id="guide.head.features"></h2>
+				<p id="guide.para.features"></p>
+				
+				<p id="guide.alert.features" hidden="hidden"></p>
+				
+				<div id="rule-container">
+					<div class="prototype" hidden="hidden">
+						<fieldset data-role="controlgroup" data-type="horizontal" class="ui-field-contain">
+					        <legend></legend>
+					        <input type="radio" value="required">
+					        <label class="label-required"></label>
+					        <input type="radio" value="nicetohave">
+					        <label class="label-nicetohave"></label>
+					        <input type="radio" value="inessential" checked="checked">
+					        <label class="label-inessential"></label>
+					    </fieldset>
+					</div>
+				</div>
+				
+				<button id="btnEvaluate" type="button" class="ui-btn ui-corner-all"></button>
+			</form>
+		</div>
+	</div>
+	
+	<!-- RESULT PAGE -->
+	<div data-role="page" id="result">
+	
+		<div data-role="header">
+			<h1>Should I PWA?</h1>
+		</div>
+	
+		<div class="ui-content" role="main">
+			<h2 id="result.head.overall"></h2>
+			<p id="overall-result-title"></p>
+			<p id="overall-result-description"></p>
+			
+			<h2 id="result.head.perfeature"></h2>
+			
+			<div id="required-feature-block">
+				<h3 id="result.head.required"></h3>
+				<div id="required-feature-container"></div>
+			</div>
+			
+			<div id="nicetohave-feature-block">
+				<h3 id="result.head.nicetohave"></h3>
+				<div id="nicetohave-feature-container"></div>
+			</div>
+			
+		</div>
+		
+	</div>
+</body>
+</html>
